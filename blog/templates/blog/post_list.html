@@ -6,25 +6,12 @@
 <div>
     <h1><a href="">Django Girls Blog</a></h1>
 </div>
-
+{% for post in posts %}
 <div>
-    <p>published: 26.07.2021, 15:00</p>
-    <h2><a href="">My first post</a></h2>
-    <p>I'm a shooting star leaping through the sky
-        Like a tiger defying the laws of gravity
-        I'm a racing car passing by like Lady Godiva
-        I'm gonna go, go, go
-        There's no stopping me</p>
+    <p>published: {{ post.published_date }}</p>
+    <h1><a href="">{{ post.title }}</a></h1>
+    <p>{{ post.text|linebreaksbr }}</p>
 </div>
-
-<div>
-    <p>published: 26.07.2021, 15:10</p>
-    <h2><a href="">My second post</a></h2>
-    <p>I'm burnin' through the sky, yeah
-        200 degrees
-        That's why they call me Mister Fahrenheit
-        I'm travelling at the speed of light
-        I wanna make a supersonic man out of you</p>
-</div>
+{% endfor %}
 </body>
 </html>
